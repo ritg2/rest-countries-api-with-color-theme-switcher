@@ -1,0 +1,199 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.875rem;
+  background: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+}
+
+.body-dark {
+  background: hsl(207, 26%, 17%);
+  color: hsl(0, 0%, 100%);
+}
+
+nav {
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: hsl(0, 0%, 100%);
+  margin-bottom: 30px;
+  box-shadow: 3px 0px 3px 3px rgb(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+b {
+  font-weight: 600;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.fa-magnifying-glass {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+
+.mode {
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 52%);
+  padding: 20px 10px 20px 70px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.1);
+}
+
+input:focus {
+  outline: none;
+  color: hsl(0, 0%, 52%);
+  background: hsl(0, 0%, 100%);
+}
+
+.filter {
+  width: 150px;
+  margin: 20px;
+  position: relative;
+}
+
+.filter-by {
+  padding: 20px 15px;
+  background: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-options {
+  position: absolute;
+  list-style: none;
+  background: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  padding: 20px 10px;
+  display: none;
+  box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.show {
+  display: block;
+}
+
+.filter-options li {
+  padding: 5px 0;
+}
+
+main {
+  padding: 10px;
+}
+
+img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 0;
+  width: 270px;
+}
+
+.card {
+  margin: auto;
+  width: 270px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.card > div {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: hsl(0, 0%, 100%);
+  width: 100%;
+  margin-top: -5px;
+  padding: 20px 30px;
+  height: 190px;
+}
+
+.stat {
+  margin-bottom: 5px;
+}
+
+.dark-element {
+  background: hsl(209, 23%, 22%) !important;
+}
+
+.no-result {
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  nav {
+    padding: 20px 50px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    width: 320px;
+  }
+
+  img {
+    width: 320px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .search-filter {
+    display: flex;
+    align-items: first baseline;
+    padding-right: 20px;
+    justify-content: space-between;
+  }
+
+  .search {
+    width: 450px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    margin: 0px;
+  }
+
+  .countries {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
