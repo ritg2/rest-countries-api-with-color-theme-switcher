@@ -8,7 +8,9 @@ const searchIcon = document.querySelector(".fa-magnifying-glass");
 
 let countriesArray = [];
 
-let isDark = false;
+let storedIsDark = JSON.parse(sessionStorage.getItem("isDark"));
+
+let isDark = storedIsDark ? storedIsDark : false;
 
 async function getCountries() {
   const response = await fetch("https://restcountries.com/v3.1/all");
@@ -59,6 +61,7 @@ window.onclick = () => {
 
 mode.addEventListener("click", () => {
   isDark = !isDark;
+  sessionStorage.setItem("isDark", JSON.stringify(isDark));
   toggleMode();
 });
 
@@ -83,11 +86,12 @@ function toggleMode() {
 
 function renderCountries(array) {
   let pageContent = "";
+  let a = "hello";
   for (let i = 0; i < array.length; i++) {
-    pageContent += `<a href="#" onclick="onNavigate('/details'); return false;">
-    <div class="card"}>
-        <img
-          src="${array[i].flags.png}"
+    let data = array[i].name.common;
+    pageContent += `<a href="pages/details.html?${data}">
+    <div class="card" onclick="viewDetails('${data}')">
+        <img src="${array[i].flags.png}"
         />
         <div class="element">
           <h2>${array[i].name.common}</h2>
